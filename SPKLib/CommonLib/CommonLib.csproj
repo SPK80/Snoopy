@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{5A3453C5-3F37-4A17-9F91-E914E1620A97}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CommonLib</RootNamespace>
+    <AssemblyName>CommonLib</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <TargetFrameworkProfile>
+    </TargetFrameworkProfile>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\DevInFin\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Config\ConfigStorge.cs" />
+    <Compile Include="Config\ISettingsCatalog.cs" />
+    <Compile Include="Config\SettingsCatalog.cs" />
+    <Compile Include="Config\SettingsManager.cs" />
+    <Compile Include="Encrypter.cs" />
+    <Compile Include="Extentions\ClipboardExt.cs" />
+    <Compile Include="Extentions\ControlExtentions.cs" />
+    <Compile Include="DeepEvent.cs" />
+    <Compile Include="Extentions\ExcelExtentions.cs" />
+    <Compile Include="Dialogs.cs" />
+    <Compile Include="Extentions\Properties.cs" />
+    <Compile Include="Flags.cs" />
+    <Compile Include="GenericEventArgs.cs" />
+    <Compile Include="InProcessCompiler.cs" />
+    <Compile Include="JsonUtils\ColorJsonConverter.cs" />
+    <Compile Include="JsonUtils\FontJsonConverter.cs" />
+    <Compile Include="Extentions\LocalInvertionOfControll.cs" />
+    <Compile Include="JsonUtils\Json.cs" />
+    <Compile Include="JsonUtils\JsonFiles.cs" />
+    <Compile Include="JsonUtils\JsonTreeConverter.cs" />
+    <Compile Include="PathContaner.cs" />
+    <Compile Include="Tmp.cs" />
+    <Compile Include="Trees\1\ITreeDeserializer.cs" />
+    <Compile Include="Trees\1\NodesDictionary.cs" />
+    <Compile Include="Trees\1\TreeNodeParser.cs" />
+    <Compile Include="TimeSpanExt.cs" />
+    <Compile Include="Trees\1\ATreeBranch.cs" />
+    <Compile Include="Trees\1\ATreeNode.cs" />
+    <Compile Include="Trys.cs" />
+    <Compile Include="Watcher.cs" />
+    <Compile Include="Trees\2\EnumCustomNode.cs" />
+    <Compile Include="Trees\2\CustomNode.cs" />
+    <Compile Include="IniFiles.cs" />
+    <Compile Include="Log.cs" />
+    <Compile Include="Extentions\Maybe.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Extentions\Redefinitions.cs" />
+    <Compile Include="RightAssignment.cs" />
+    <Compile Include="Extentions\StringExtensions.cs" />
+    <Compile Include="WatcherForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WatcherForm.Designer.cs">
+      <DependentUpon>WatcherForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Win.cs" />
+    <Compile Include="Windows.cs" />
+    <Compile Include="Wraps.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="WatcherForm.resx">
+      <DependentUpon>WatcherForm.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="Microsoft.Office.Core">
+      <Guid>{2DF8D04C-5BFA-101B-BDE5-00AA0044DE52}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>5</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="Microsoft.Office.Interop.Excel">
+      <Guid>{00020813-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>7</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
